@@ -7,7 +7,8 @@
     <title>List of links and descriptions</title>
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 
@@ -18,7 +19,8 @@
                 <div class="col-3 mx-auto">
                     <div class="card bg-dark border border-2 rounded-3 border-dark-subtle bg-dark-secondary p-2">
                         <div class="my-2">
-                            <div class="input-area d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
+                            <div
+                                class="input-area d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
                                 <div class="bg-dark-subtle px-2 pt-2 white-text">
                                     <span class="material-symbols-outlined">link</span>
                                 </div>
@@ -27,7 +29,8 @@
                             </div>
                         </div>
                         <div class="my-2">
-                            <div class="input-area d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
+                            <div
+                                class="input-area d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
                                 <div class="bg-dark-subtle px-2 pt-2 white-text">
                                     <span class="material-symbols-outlined">edit</span>
                                 </div>
@@ -36,13 +39,42 @@
                             </div>
                         </div>
                         <div class="my-2">
-                            <div class="input-area d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
-                                <textarea name="description" id="descriptionInput" placeholder="Description" rows="3"  class=" w-100 order-0 bg-secondary white-text p-2"></textarea>
+                            <div
+                                class="input-area d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
+                                <textarea name="description" id="descriptionInput" placeholder="Description" rows="3"
+                                    class=" w-100 order-0 bg-secondary white-text p-2"></textarea>
                             </div>
                         </div>
                         <div class="my-2">
                             <div class="d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
-                                <button type="submit" class="w-100 order-0 bg-success text-light p-2">CREATE</button>
+                                <button type="submit" id="liveToastBtn"
+                                    class="w-100 order-0 bg-success text-light p-2">CREATE</button>
+                                <!-- <div class="toast-container position-fixed top-0 end-0 p-3">
+                                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                        <div class="toast-header text-bg-success d-flex border-bottom-0 mb-0 justify-content-end">
+                                            <button type="button"
+                                                class="btn-close me-2 text-white text-end fw-lighter fs-6"
+                                                data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body text-bg-success border-top-0 mt-0">
+                                            Saved
+                                        </div>
+                                        <div class="underscore"></div>
+                                    </div>
+                                </div> -->
+                                <div class="toast-container position-fixed top-0 end-0 p-3">
+                                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                        <div class="toast-header text-bg-warning d-flex border-bottom-0 mb-0 justify-content-end">
+                                            <button type="button"
+                                                class="btn-close me-2 text-white text-end fw-lighter fs-6"
+                                                data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body text-bg-warning border-top-0 mt-0">
+                                            Link invalid
+                                        </div>
+                                        <div class="underscore"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -55,8 +87,10 @@
                             <div id="title" class="d-flex justify-content-between">
                                 <h3>Twitter</h3>
                                 <div class="w-25 d-flex">
-                                    <button class="border-0 icon-buttons"><span class="material-symbols-outlined text-light">edit</span></button>
-                                    <button class="border-0 icon-buttons"><span class="material-symbols-outlined text-light">delete</span></button>
+                                    <button class="border-0 icon-buttons"><span
+                                            class="material-symbols-outlined text-light">edit</span></button>
+                                    <button class="border-0 icon-buttons"><span
+                                            class="material-symbols-outlined text-light">delete</span></button>
                                 </div>
                             </div>
                             <div id="description">
@@ -66,14 +100,16 @@
                                 <div>
                                     <a href="wew" class="text-decoration-none text-success">Go to website</a>
                                 </div>
-                                <div class="form-check form-switch andro text-center w-50 d-flex flex-column align-items-center me-2">
+                                <div
+                                    class="form-check form-switch andro text-center w-50 d-flex flex-column align-items-center me-2">
                                     <label for="checkBox" class="fs-6 fw-lighter text-wrap">Show/Hide URL</label>
-                                    <input class="form-check-input flexSwitch mx-auto" id="checkBox" type="checkbox" data-index="${index}">
+                                    <input class="form-check-input flexSwitch mx-auto" id="checkBox" type="checkbox"
+                                        data-index="${index}">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
