@@ -34,7 +34,7 @@
                                 <div class="bg-dark-subtle px-2 pt-2 white-text">
                                     <span class="material-symbols-outlined">edit</span>
                                 </div>
-                                <input type="url" required placeholder="Website name" id="nameInput"
+                                <input type="text" required placeholder="Website name" id="nameInput"
                                     class=" w-100 border-0 bg-secondary white-text p-2">
                             </div>
                         </div>
@@ -47,30 +47,18 @@
                         </div>
                         <div class="my-2">
                             <div class="d-flex form-control p-0 input-class rounded-0 overflow-hidden border-0">
-                                <button type="submit" id="liveToastBtn"
+                                <button type="submit" id="liveToastBtn" onclick="btnCheck()"
                                     class="w-100 order-0 bg-success text-light p-2">CREATE</button>
-                                <!-- <div class="toast-container position-fixed top-0 end-0 p-3">
-                                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                        <div class="toast-header text-bg-success d-flex border-bottom-0 mb-0 justify-content-end">
-                                            <button type="button"
-                                                class="btn-close me-2 text-white text-end fw-lighter fs-6"
-                                                data-bs-dismiss="toast" aria-label="Close"></button>
+                                <div id="toastButton" class="toast-container position-fixed top-0 end-0 p-3">
+                                    <div id="liveToast" class="toast text-bg-light" role="alert" aria-live="assertive"
+                                        aria-atomic="true">
+                                        <div
+                                            class="toast-header mx-2 mt-2 bg-transparent d-flex border-bottom-0 mb-0 justify-content-end">
+                                            <button type="button" class="btn-close text-center me-1"
+                                                data-bs-dismiss="toast" aria-label="Close">
+                                            </button>
                                         </div>
-                                        <div class="toast-body text-bg-success border-top-0 mt-0">
-                                            Saved
-                                        </div>
-                                        <div class="underscore"></div>
-                                    </div>
-                                </div> -->
-                                <div class="toast-container position-fixed top-0 end-0 p-3">
-                                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-                                        <div class="toast-header text-bg-warning d-flex border-bottom-0 mb-0 justify-content-end">
-                                            <button type="button"
-                                                class="btn-close me-2 text-white text-end fw-lighter fs-6"
-                                                data-bs-dismiss="toast" aria-label="Close"></button>
-                                        </div>
-                                        <div class="toast-body text-bg-warning border-top-0 mt-0">
-                                            Link invalid
+                                        <div id="toastText" class="toast-body border-top-0 mt-0">
                                         </div>
                                         <div class="underscore"></div>
                                     </div>
@@ -80,35 +68,12 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <h1 class="text-center text-white">Links</h1>
+            </div>
             <div class="container-fluid">
                 <div id="output" class="row mt-5">
-                    <div class="card col-sm-12 col-md-6 col-lg-3 p-3 bg-dark border-0">
-                        <div class="card border-0 ps-2 py-3 information-area text-light">
-                            <div id="title" class="d-flex justify-content-between">
-                                <h3>Twitter</h3>
-                                <div class="w-25 d-flex">
-                                    <button class="border-0 icon-buttons"><span
-                                            class="material-symbols-outlined text-light">edit</span></button>
-                                    <button class="border-0 icon-buttons"><span
-                                            class="material-symbols-outlined text-light">delete</span></button>
-                                </div>
-                            </div>
-                            <div id="description">
-                                <h4 class="text-light-emphasis">Social</h4>
-                            </div>
-                            <div id="link" class="d-flex justify-content-between align-items-center">
-                                <div>
-                                    <a href="wew" class="text-decoration-none text-success">Go to website</a>
-                                </div>
-                                <div
-                                    class="form-check form-switch andro text-center w-50 d-flex flex-column align-items-center me-2">
-                                    <label for="checkBox" class="fs-6 fw-lighter text-wrap">Show/Hide URL</label>
-                                    <input class="form-check-input flexSwitch mx-auto" id="checkBox" type="checkbox"
-                                        data-index="${index}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                 </div>
             </div>
