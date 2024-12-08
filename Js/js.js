@@ -11,6 +11,11 @@ var toastText = document.querySelector('#toastText');
 
 var editItemVar = -1;
 
+if(localStorage.getItem('WebSiteLinkListStorage')){
+  WebSiteLinkList = JSON.parse(localStorage.getItem('WebSiteLinkListStorage'));
+  readWebSiteList();
+}
+
 function btnCheck() {
   if (!linkInput.checkValidity()) {
     showToast("Invalid URL. Please enter a valid URL.", "text-bg-warning");
@@ -92,6 +97,7 @@ function readWebSiteList() {
       }
     });
   });
+  saveLocal();
 }
 
 function editItem(index) {
@@ -135,4 +141,8 @@ function showToast(message, bgClass) {
   toastText.innerHTML = message;
   const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastInput);
   toastBootstrap.show();
+}
+
+function saveLocal(){
+  localStorage.setItem('WebSiteLinkListStorage',JSON.stringify(WebSiteLinkList))
 }
