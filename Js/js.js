@@ -16,8 +16,10 @@ if(localStorage.getItem('WebSiteLinkListStorage')){
   readWebSiteList();
 }
 
+var regex = /^http[a-zA-Z0-9!@#$%^&*()_+={}\[\]:;"'<>,.?\/\\|-]+(\.com|\.net|\.html)$/
+
 function btnCheck() {
-  if (!linkInput.checkValidity()) {
+  if (regex.test(linkInput)) {
     showToast("Invalid URL. Please enter a valid URL.", "text-bg-warning");
     return;
   }
@@ -58,30 +60,30 @@ function readWebSiteList() {
   let output = '';
   WebSiteLinkList.forEach((test, index) => {
     output += `<div class="card col-sm-12 col-md-6 col-lg-3 p-3 bg-dark border-0">
-                        <div class="card border-0 ps-2 py-3 information-area text-light">
-                            <div id="title" class="d-flex justify-content-between">
-                                <h3>${test.name}</h3>
-                                <div class="w-25 d-flex">
-                                    <button class="border-0 icon-buttons"><span
-                                            class="material-symbols-outlined text-light" onclick="editItem(${index})">edit</span></button>
-                                    <button class="border-0 icon-buttons" onclick="deleteItem(${index})"><span
-                                            class="material-symbols-outlined text-light">delete</span></button>
-                                </div>
-                            </div>
-                            <div id="description">
-                                <h4 class="text-light-emphasis">${test.description}</h4>
-                            </div>
-                            <div id="link" class="d-flex justify-content-between align-items-center">
-                                <div class="anchor overflow-hidden"><a href="${test.link}" class="text-decoration-none text-success text-wrap"
-                                        id="link-${index}">Go to website</a></div>
-                                <div class="form-check form-switch andro text-center d-flex flex-column align-items-center me-2">
-                                    <label for="checkBox" class="label-text fw-lighter text-wrap">Show/Hide URL</label>
-                                    <input class="form-check-input flexSwitch mx-auto" id="checkBox" type="checkbox"
-                                        data-index="${index}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>`;
+        <div class="card border-0 ps-2 py-3 information-area text-light">
+            <div id="title" class="d-flex justify-content-between">
+                <h3>${test.name}</h3>
+                <div class="w-25 d-flex">
+                    <button class="border-0 icon-buttons"><span
+                            class="material-symbols-outlined text-light" onclick="editItem(${index})">edit</span></button>
+                    <button class="border-0 icon-buttons" onclick="deleteItem(${index})"><span
+                            class="material-symbols-outlined text-light">delete</span></button>
+                </div>
+            </div>
+            <div id="description">
+                <h4 class="text-light-emphasis">${test.description}</h4>
+            </div>
+            <div id="link" class="d-flex justify-content-between align-items-center">
+                <div class="anchor overflow-hidden"><a href="${test.link}" class="text-decoration-none text-success text-wrap"
+                        id="link-${index}" target="_blank">Go to website</a></div>
+                <div class="form-check form-switch andro text-center d-flex flex-column align-items-center me-2">
+                    <label for="checkBox" class="label-text fw-lighter text-wrap">Show/Hide URL</label>
+                    <input class="form-check-input flexSwitch mx-auto" id="checkBox" type="checkbox"
+                        data-index="${index}">
+                </div>
+            </div>
+        </div>
+    </div>`;
   });
   document.getElementById('output').innerHTML = output;
 
