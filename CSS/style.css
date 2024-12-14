@@ -46,17 +46,19 @@
 }
 .underscore {
     height: 5px;
-    animation: underscore-show 5s forwards; 
-    animation-delay: 0;
+    width: 100%; 
+    background-color: white;
+    transform-origin: left; 
+    animation: underscore-show 5s forwards ease-in-out;
 }
 
 @keyframes underscore-show {
     0% {
-        width: 100% !important;
+        transform: scaleX(1); 
         background-color: white;
     }
     100% {
-        width: 0 !important;
+        transform: scaleX(0); 
         background-color: white;
     }
 }

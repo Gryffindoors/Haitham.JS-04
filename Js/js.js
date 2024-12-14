@@ -1,5 +1,6 @@
 var toastTrigger = document.getElementById('liveToastBtn');
 var toastLiveExample = document.getElementById('liveToast');
+var underscoreDiv = document.getElementById('underscore');
 
 var WebSiteLinkList = [];
 var nameInput = document.getElementById('nameInput');
@@ -8,15 +9,13 @@ var descriptionInput = document.getElementById('descriptionInput');
 var listOutput = document.getElementById('output');
 var toastInput = document.querySelector('#liveToast');
 var toastText = document.querySelector('#toastText');
-
+var regex = /^http[a-zA-Z0-9!@#$%^&*()_+={}\[\]:;"'<>,.?\/\\|-]+(\.com|\.net|\.html)$/;
 var editItemVar = -1;
 
-if(localStorage.getItem('WebSiteLinkListStorage')){
+if (localStorage.getItem('WebSiteLinkListStorage')) {
   WebSiteLinkList = JSON.parse(localStorage.getItem('WebSiteLinkListStorage'));
   readWebSiteList();
 }
-
-var regex = /^http[a-zA-Z0-9!@#$%^&*()_+={}\[\]:;"'<>,.?\/\\|-]+(\.com|\.net|\.html)$/
 
 function btnCheck() {
   if (regex.test(linkInput)) {
@@ -139,12 +138,20 @@ function deleteItem(index) {
 }
 
 function showToast(message, bgClass) {
-  toastInput.className = `toast ${bgClass}`; 
+  toastInput.className = `toast ${bgClass}`;
   toastText.innerHTML = message;
+
+  if (underscoreDiv) {
+    underscoreDiv.classList.add('underscore');
+    setTimeout(() => {
+      underscoreDiv.classList.remove('underscore');
+    }, 5000);
+  }
+
   const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastInput);
   toastBootstrap.show();
 }
 
-function saveLocal(){
-  localStorage.setItem('WebSiteLinkListStorage',JSON.stringify(WebSiteLinkList))
+function saveLocal() {
+  localStorage.setItem('WebSiteLinkListStorage', JSON.stringify(WebSiteLinkList));
 }
